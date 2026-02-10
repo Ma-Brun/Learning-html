@@ -22,20 +22,57 @@
             <th># of Episodes</th>
         </tr>
         <tr>
-            <th>ATLA</th>
-            <th>Animated Drama</th>
-            <th>Like 45</th>
+            <td>ATLA</td>
+            <td>Animated Drama</td>
+            <td>Like 45</td>
         </tr>
         <tr>
-            <th>Fallout</th>
-            <th>Dystopian Future</th>
-            <th>Like 15</th>
+            <td>Fallout</td>
+            <td>Dystopian Future</td>
+            <td>Like 15</td>
         </tr>
         <tr>
-            <th>Breaking Bad</th>
-            <th>Drama/Action</th>
-            <th>Like a lot</th>
+            <td>Breaking Bad</td>
+            <td>Drama/Action</td>
+            <td>Like a lot</td>
         </tr>
     </table>
-</body>
-</html>
+        <!-- Compact class form: saves into JS variables (no persistence) -->
+        <section class="class-form">
+            <h2>Class</h2>
+            <form id="classForm" onsubmit="saveClass(event)">
+                 <select id="subject" name="subject">
+                    <option value="math">Math</option>
+                    <option value="science">Science</option>
+                    <option value="history">History</option>
+                    <option value="english">English</option>
+                    <option value="art">Art</option>
+                    <option value="physical-education">Physical Education</option>
+                    <option value="coding">Coding</option>
+                </select><br>
+                <label><span>Class name</span><input id="className" name="className" type="text"></label>
+                <label><span>Teacher</span><input id="teacherName" name="teacherName" type="text"></label>
+                <button type="submit">Save</button>
+                <span id="saveMsg" style="color:#fff;margin-bottom:8px"></span>
+                <script>
+                    function saveClass(e){
+                    e.preventDefault();
+                    window.classNameVar = document.getElementById('className').value;
+                    window.teacherNameVar = document.getElementById('teacherName').value;
+                    window.subjectVar = document.getElementById('subject').value;
+                    const m = document.getElementById('saveMsg'); m.textContent = 'Saved'; // I asked chat for this part, it just saves them to a variable which is accesible later
+                    setTimeout(()=> m.textContent = '',1200);
+                }
+                </script>
+            </form>
+        </section>
+        <section class="todo">
+            <h2>Shopping List</h2>
+                <ul>
+                    <li><input type="checkbox" id="item1"><label for="item1">Milk</label></li>
+                    <li><input type="checkbox" id="item2"><label for="item2">Bread</label></li>                 
+                    <li><input type="checkbox" id="item3"><label for="item3">Eggs</label></li>                                    
+                    <li><input type="checkbox" id="item4"><label for="item4">Butter</label></li>
+                    <li><input type="checkbox" id="item5"><label for="item5">Apples</label></li>
+                </ul>
+            </section class="todo">

@@ -5,6 +5,76 @@ h1 {
     color: red;
     font-size: 50px
     }
-table{
-    font-size: medium;
-    }
+table, th, td{
+    border: 2px solid black;
+    border-color: #ffffff;
+}
+th {
+    font-size: 1.2em;      /* Larger text size for headers */
+    font-weight: bold;     /* Bold text (usually default, but good for clarity) */
+    color: #003366;        /* A dark blue color */
+    text-transform: uppercase; 
+    padding: 10px;         
+    background-color: #000000; 
+}
+
+td {
+    font-size: 1em;        
+    font-weight: normal;   
+    color: #ffffff;        
+    padding: 8px 10px;     
+    text-align: center;    
+    background-color: #000000;
+}
+
+label { display:block; margin-bottom:4px }
+
+.todo ul li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 6px 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.todo input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #fff;
+}
+.todo input[type="checkbox"] + label {
+    cursor: pointer;
+    color: #fff;
+}
+.todo input[type="checkbox"]:checked + label {
+    text-decoration: line-through;
+    color: #ccc;
+}
+
+.class-form {
+    color: #fff;
+    margin: 12px 0;
+}
+.class-form label {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 8px;
+}
+.class-form label span {
+    display: inline-block;
+    width: 110px;
+    text-align: right;
+    margin-right: 8px;
+}
+.class-form input {
+    padding: 4px;
+}
+.class-form input,
+.class-form select {
+    padding: 4px;
+}
+.class-form select {
+    margin-bottom: 12px;
+}
+.class-form button {
+    margin-left: 8px;
+}

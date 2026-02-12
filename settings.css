@@ -1,10 +1,20 @@
+/* Box sizing and basic layout for a responsive page */
+*, *::before, *::after { box-sizing: border-box; }
 body {
-    background-color: rgb(113, 16, 204);
-    }
-h1 { 
+    background: radial-gradient(circle at center, #ff0000 0%, #3a0000 60%, #000000 100%);
+    margin: 0 auto;
+    max-width: 1100px;
+    padding: 16px;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+h1 {
     color: red;
-    font-size: 50px
-    }
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    margin-top: 0;
+}
+/* Make tables fluid and readable on small screens */
+.table-wrapper { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
 table, th, td{
     border: 2px solid black;
     border-color: #ffffff;
@@ -26,6 +36,10 @@ td {
     text-align: center;    
     background-color: #000000;
 }
+
+/* Responsive images and iframes */
+img { max-width: 100%; height: auto; display: block; }
+iframe { width: 100%; height: auto; aspect-ratio: 16 / 9; border: 0; display: block; }
 
 label { display:block; margin-bottom:4px }
 
@@ -77,4 +91,22 @@ label { display:block; margin-bottom:4px }
 }
 .class-form button {
     margin-left: 8px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+    .class-form label {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+    }
+    .class-form label span {
+        display: block;
+        width: auto;
+        text-align: left;
+        margin-right: 0;
+    }
+    .todo ul li { padding: 8px 6px; }
+    th, td { padding: 6px 8px; font-size: 0.95rem; }
 }

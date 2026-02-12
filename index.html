@@ -1,5 +1,8 @@
-<html>
+<!doctype html>
+<html lang="en">
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Learning HTML</title>
     <link rel="stylesheet" href="settings.css">
     <link rel="icon" type="image/jpg" href="images.jpg">
@@ -15,6 +18,7 @@
     <figcaption>I was sleeping</figcaption>
     </figure>
     <p>I am looking forward to learning <b>HTML</b> and other <i>things</i></p> <!-- This has bolded and italicized text-->
+    <div class="table-wrapper">
     <table>
         <tr>
             <th>Show</th>
@@ -37,6 +41,7 @@
             <td>Like a lot</td>
         </tr>
     </table>
+    </div>
         <!-- Compact class form: saves into JS variables (no persistence) -->
         <section class="class-form">
             <h2>Class</h2>
@@ -75,4 +80,38 @@
                     <li><input type="checkbox" id="item4"><label for="item4">Butter</label></li>
                     <li><input type="checkbox" id="item5"><label for="item5">Apples</label></li>
                 </ul>
-            </section class="todo">
+            </section>
+        <section class="Date Button">
+            <h2>Date Button</h2>
+            <button onclick="alert(new Date().toLocaleDateString())">Show Date</button>
+        </section>
+        <section class="music-player">
+            <h2>My Song</h2>
+            <button type="button" onclick="playMySong()">Play My Song</button>
+            <div style="margin-top:12px;">
+                <iframe
+                    id="ytPlayer"
+                    width="560"
+                    height="315"
+                    style="max-width:100%; border:0;"
+                    allow="autoplay; encrypted-media; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+        <script>
+            const YOUTUBE_VIDEO_ID = 'GcAsY7xQHb0';
+
+            function playMySong() {
+                if (!YOUTUBE_VIDEO_ID || YOUTUBE_VIDEO_ID === 'YOUR_VIDEO_ID') {
+                    alert('Add your YouTube video ID first.');
+                    return;
+                }
+
+                const player = document.getElementById('ytPlayer');
+                player.src = `https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&rel=0`;
+            }
+        </script>
+        
+</body>
+</html>
